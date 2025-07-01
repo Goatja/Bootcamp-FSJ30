@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+*{
+    --primary-color:#ffffff;
+}
+html{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-color: gray !important;
+    background-image: url(../images/background-adare-restaurant.jpg);
+    background-size: cover;
+}
+
+/*======================*/
+/*Contenedor principal*/
+/*=====================*/
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80dvw;
+    text-align: center;
+    
+}
+
+
+.container .header{
+    text-align: center;
+    height: 20vh;
+}
+
+.container .header .img-container{
+    height: 15vh;
+}
+
+.container .header .img-container .img-logo{
+    height: 10vh;
+}
+
+/*NavBar*/
+.container .header .navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 50vw;  
+}
+
+/*Navbar*/
+
+.container .header .navbar a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.container .header .navbar .nav-item:hover{
+    /*animation: navItemHover 0.3s forwards;*/
+        color: #e96e35;
+        font-size: 1.4em;
+        text-decoration: underline;
+}
+
+/*
+@keyframes navItemHover {
+    to{
+        color: #e96e35;
+        font-size: 1.4em;
+        text-decoration: underline;
+    }
+}
+    */
+
+.container .main-container{
+    margin-top: 5vh;
+}
+
+.container .main-container .main-text-container{
+    color: var(--primary-color);
+    padding: 2rem;
+}
+
+.container .main-container .main-text-container .main-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    transition: all 0.3s;
+}
+
+.container .main-container .main-text-container .main-text:hover{
+    text-shadow: 2px 2px #e96e35;
+}
+
+.container .main-container .main-text-container article{
+    margin: 0 auto;
+    max-width: 40vw;
+}
+
+.container .main-container .main-text-container article p{
+    color: var(--primary-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+}
+
+.container .main-container .main-text-container article p strong a{
+    text-decoration: none;
+    color: var(--primary-color);
+    text-shadow: 0.1em 0.1em #bbbaba;
+}
+
+.container .main-container .maps-container .maps{
+    height: 50vh;
+    width: 60vw;
+}
+
+.container .footer{
+    color:var(--primary-color);
+}
+
+.container .footer{
+    font-size: 1.1em;
+}

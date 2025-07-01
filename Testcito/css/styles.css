@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* Cuerpo principal que contiene todo o de alcance global en el archivo */
+.main-body {
+  background-color: #192c63;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0
+}
+
+.main-body .wraper {
+  width: 90%;
+  margin:0 auto;
+}
+
+/* Esta seccion contiene todo el encabezado  */
+
+.main-body .wraper .top-header{
+  width: 80vw;
+}
+
+.main-body .wraper .top-header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.main-body .wraper .top-header .navbar .logo-section .logo-text {
+  font-size: 2.5em;
+}
+
+.main-body .wraper .top-header .navbar .logo-section .logo-text span {
+  color: rgb(10,165,165);
+  text-shadow : 1px 1px 3px white;
+}
+
+.main-body .wraper .top-header .navbar .nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0;
+}
+
+
+.main-body .wraper .top-header .navbar .nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Muestra en el menu un underline tipo wavy al pasar el mouse por sobre cada elemento */
+.main-body .wraper .top-header .navbar .nav-menu a:hover{
+  text-decoration: wavy underline lime;
+  text-decoration-thickness: 3px;
+  color: rgb(165, 93, 10);
+}
+
+.main-body .wraper .main-ctn {
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 4rem
+}
+
+.main-body .wraper .main-ctn .foto-container{
+  width: 30vw;
+}
+
+.main-body .wraper .main-ctn .foto-container img {
+  width:100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0);
+  transition: all 0.3s ease-in-out;
+}
+
+.main-body .wraper .main-ctn .foto-container img:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0);
+}
+
+.main-body .wraper .main-ctn .biografia .boton {
+  background: #bb0b83;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.main-body .wraper .main-ctn .biografia .typing{
+  width: 0;
+  overflow: hidden;
+  border-right: ridge 0.5rem white;
+  animation: typing 2s steps(25) forwards;
+  white-space:nowrap;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  font-family: monospace;
+  color: #e7b3d7;
+}
+
+
+@keyframes typing {
+  to {
+    width: 100%;
+    filter: brightness(75%)
+  }
+}
+
+/* Seccion de proyectos */
+.main-body .wraper .mis-proyectos{
+  margin-top: 4rem;
+} 
+.main-body .wraper .mis-proyectos .projects-header .centered{
+  display: flex;
+  justify-content: center;
+}
+
+.main-body .wraper .mis-proyectos .grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30%); /* columnas dinamicas */
+  gap: 2rem;
+  padding: 2rem;
+
+}
+ .main-body .wraper .mis-proyectos .grid-container .projectcard {
+  background-color: #233a7a;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 90%;
+  transition: all 0.5s ease-in;
+}
+
+.main-body .wraper .mis-proyectos .grid-container .projectcard:hover{
+  background-color: #2c3e50;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px wheat;
+}
+
+.img-top {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.enlaces {
+  display: flex;
+  justify-content: space-between
+}
+
+.contacto{
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario {
+  width: 50%;
+  max-width: 600px;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.inpt {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.inptt {
+  height: 100px;
+  width: 100%;
+}
+
+.bt-submit {
+  background-color: blueviolet;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+.redessociales {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
