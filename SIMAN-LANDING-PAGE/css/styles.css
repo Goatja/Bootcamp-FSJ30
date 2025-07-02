@@ -11,13 +11,16 @@
 :root{
     /* Colores a usar en nuestra siman landing page */
     --color-primario: #2F4F7F;
-    --color-secundario: #082181 ;
+    --color-secundario: #cc0808 ;
     --color-terciario: #F7F7F7;
     --color-primario-oscuro: #1A1D23;
     --color-secundario-oscuro: #2F4F7F;
     --color-primario-claro: #F7F7F7;
     --color-secundario-claro: #F7F7F7;
     --color-primario-oscuro-claro: #F7F7F7;
+
+    /* Otras variables */
+    
 
     /* configuracion personalizada de nuestra hoja de estilos */
     margin: 0;
@@ -30,5 +33,98 @@
     width:98dvw;
     height: 100vh;
     margin: 0 auto;
-    background-color: var(--color-primario);    
+    background-color: var(--color-primario);
+    scroll-behavior: smooth;    
 }
+
+.wrap .header-container{
+    width: 98dvw;
+    height: 10dvh;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-secundario);
+    position: fixed;
+    top: 0;
+     animation: brillo 1s forwards;
+}
+
+/* el key frame para animar el brillo  que se vea que pasa un brillo de izquierda a dereche */
+@keyframes brillo{
+    0%{
+        background-color: var(--color-secundario-oscuro);
+        background-position-x: left ;
+    }
+    100%{
+        background-color: var(--color-secundario);
+    }
+}
+
+
+/* Estila el logo texto del header */
+.wrap .header-container .logo-header{
+    width:40dvw;
+    height: 10dvh;
+    align-content: center;
+}
+
+.wrap .header-container .logo-header .logo{
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--color-primario-claro);
+    font-weight: bolder;
+    filter:drop-shadow(1px 1px 1px var(--color-primario-claro))
+}
+
+/* rota el contenedor que contiene la S */
+.wrap .header-container .logo-header  .logo .logo-rotado{
+    width:3rem;
+    height: 3rem;
+    display: inline-block;
+    transform: rotate(40deg);
+    background-color: rgb(173, 98, 6);
+}
+
+.wrap .header-container .logo-header  .logo .logo-rotado .logo-content{
+    transform: rotate(-40deg);
+    display: inline-block;
+    padding-left: 0.2em;
+}
+
+/* seccion del navbar */
+.wrap .header-container .navbar{
+    display: flex;
+    gap: 1rem;
+}
+
+.wrap .header-container .nav-item{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding-right: 1em;
+    text-decoration: none;
+    color: #F7F7F7;
+    transition: all 0.5s;
+}
+
+.wrap .header-container .nav-item:hover{
+    /* darle interactivida al hover */
+    border-bottom: 1px solid #F7F7F7;
+    /* scale */
+    transform: scale(1.1);
+}
+
+
+/* Main container es el contenedor donde hacemmos una pequeña presentación del home */
+.wrap .main-container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://sneakerpolitics.com/cdn/shop/files/Sneaker-Politics-Jordan-1lowUniversityRed-Web-5_8cef2997-ed84-47a1-84e3-0e89f06465c5.jpg?v=1696527411&width=1140);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
