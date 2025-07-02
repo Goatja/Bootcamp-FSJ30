@@ -23,6 +23,10 @@ git branch -D
 git checkout
 //Cambiamos a la rama
 
+git pull 
+//Actualizamos la rama actual con los cambios de la rama main
+
+
 Alternativa
 //Cambiamos a la rama
 git checkout -b
