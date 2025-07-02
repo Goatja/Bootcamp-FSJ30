@@ -1,0 +1,37 @@
+Configuracion del perfil.
+
+git config --global user.name //Configuramos a nivel global el usuario.
+
+git config --global user.email //Configuramos a nivel global el correo electrónico.
+
+git branch -M <name>
+//Creamos una nueva rama y la nueva rama se convierte en la rama actual
+
+git push -u origin main --force 
+//Subimos los cambios a la rama main y forzamos el push para que se actual
+
+*=================Branch====================*
+//Creamos una nueva rama
+git branch
+//Cambiamos a la rama
+git checkout
+//Eliminamos la rama
+git branch -d
+//Eliminamos la rama y sus cambios
+git branch -D
+//Cambiamos a la rama
+git checkout
+//Cambiamos a la rama
+
+Alternativa
+//Cambiamos a la rama
+git checkout -b
+//Cambiamos a la rama y creamos una nueva rama
+
+git switch -c nueva/rama
+//Cambiamos a la rama y creamos una nueva rama
+
+
+
+
+
