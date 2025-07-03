@@ -1,0 +1,62 @@
+
+[{
+  "id": 1,
+  "name": "Herbed Chicken Breast",
+  "precio": 7.99,
+  "tipo_producto": "Marinated chicken breast seasoned with herbs, ready for grilling.",
+  "stock": "ChipMOS TECHNOLOGIES INC."
+}, {
+  "id": 2,
+  "name": "LED Strip Lights",
+  "precio": 19.99,
+  "tipo_producto": "Colorful LED strip lights for home decoration.",
+  "stock": "Cytokinetics, Incorporated"
+}, {
+  "id": 3,
+  "name": "Peach Slices in Syrup",
+  "precio": 2.59,
+  "tipo_producto": "Sweet and tender peach slices preserved in syrup, great for desserts.",
+  "stock": "First Financial Bancorp."
+}, {
+  "id": 4,
+  "name": "Safety First Aid Kit",
+  "precio": 29.99,
+  "tipo_producto": "Comprehensive first aid kit for home or travel emergencies.",
+  "stock": "Soleno Therapeutics, Inc."
+}, {
+  "id": 5,
+  "name": "Electric Meat Grinder",
+  "precio": 89.99,
+  "tipo_producto": "Powerful grinder for making sausage and burgers at home.",
+  "stock": "Diamond Hill Investment Group, Inc."
+}, {
+  "id": 6,
+  "name": "Fishing Rod",
+  "precio": 49.99,
+  "tipo_producto": "Lightweight fishing rod suitable for beginners.",
+  "stock": "Tenneco Inc."
+}, {
+  "id": 7,
+  "name": "Organic Almonds",
+  "precio": 8.99,
+  "tipo_producto": "Crunchy and nutritious almonds, perfect for snacking.",
+  "stock": "Agilent Technologies, Inc."
+}, {
+  "id": 8,
+  "name": "Vanilla Protein Powder",
+  "precio": 24.99,
+  "tipo_producto": "A high-quality protein powder perfect for smoothies and baking.",
+  "stock": "Gerdau S.A."
+}, {
+  "id": 9,
+  "name": "Smart Doorbell",
+  "precio": 119.99,
+  "tipo_producto": "Wi-Fi enabled doorbell with HD camera and two-way audio.",
+  "stock": "Kimberly-Clark Corporation"
+}, {
+  "id": 10,
+  "name": "Solar String Lights",
+  "precio": 29.99,
+  "tipo_producto": "Eco-friendly string lights for outdoor decor.",
+  "stock": "Double Eagle Acquisition Corp."
+}]
