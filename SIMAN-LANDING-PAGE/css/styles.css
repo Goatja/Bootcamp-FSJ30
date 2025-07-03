@@ -21,7 +21,7 @@ html{
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: var(--color-primario);
+  background-color: var(--color-primario-claro);
 }
 
 /* ========== Estructura Principal ========== */
@@ -167,7 +167,6 @@ body {
 .wrap .products-section {
   width: 98vw;
   height: 100dvh;
-  background-color: #e7eaee;
 }
 
 .wrap .products-section .section-title {
@@ -185,10 +184,9 @@ body {
 .wrap .products-section .section-cards{
     display: flex;
     flex-wrap: wrap;
-    height: 60vh;
+    background-color: #f7f7f7;
     margin: 1em;
     padding: 1em;
-    background-color: antiquewhite;
 }
 
 .wrap .products-section .section-cards {
@@ -200,9 +198,8 @@ body {
 }
 
 .wrap .products-section .section-cards .tarjeta {
-  
+  max-width: 5vw;
   height: auto;
-  background-color: aquamarine;
   border-radius: 1em;
   padding: 1em;
   display: flex;
@@ -230,7 +227,7 @@ body {
 
 /* ========== Responsive (≤ 800px) ========== */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
   .wrap .header-container .burger-menu {
     display: flex; 
   }
@@ -254,4 +251,16 @@ body {
   .wrap .header-container .logo-header .logo {
     font-size: 1.5rem;
   }
+}
+
+
+/* ======= Tarjeta ======== */
+.wrap .products-section .section-title{
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+.wrap .products-section .section-cards .tarjeta {
+  max-width: 100dvw;
 }
