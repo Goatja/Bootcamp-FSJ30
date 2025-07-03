@@ -15,10 +15,13 @@
   box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--color-primario);
-  scroll-behavior: smooth;
 }
 
 /* ========== Estructura Principal ========== */
@@ -102,7 +105,7 @@ body {
 
 .wrap .header-container .burger-menu .burger-item {
   width: 100%;
-  height: 4px;
+  height: 0.2em;
   background-color: var(--color-terciario);
   border-radius: 2px;
 }
@@ -160,11 +163,76 @@ body {
   text-align: center;
 }
 
+/* ==========Seccion de productos============ */
+.wrap .products-section {
+  width: 98vw;
+  height: 100dvh;
+  background-color: #e7eaee;
+}
+
+.wrap .products-section .section-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 1.8em;
+}
+
+/* Para asegurar que el scrl-behavior no oculte donde esta el ancla */
+.wrap .products-section #productos {
+  scroll-margin-top: 10vh; /* --- altura del header fijo ---*/
+}
+
+.wrap .products-section .section-cards{
+    display: flex;
+    flex-wrap: wrap;
+    height: 60vh;
+    margin: 1em;
+    padding: 1em;
+    background-color: antiquewhite;
+}
+
+.wrap .products-section .section-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.wrap .products-section .section-cards .tarjeta {
+  
+  height: auto;
+  background-color: aquamarine;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wrap .products-section .section-cards .tarjeta .tarjeta-head {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.wrap .products-section .section-cards .tarjeta .tarjeta-head .image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+
+
+
+
+
 /* ========== Responsive (≤ 800px) ========== */
 
 @media screen and (max-width: 800px) {
   .wrap .header-container .burger-menu {
-    display: flex;
+    display: flex; 
   }
 
   .wrap .header-container .navbar {
