@@ -3,13 +3,10 @@ Aplicacion js
 
 */
 
-const productSection = document.getElementById("prod");
-
-//funcion que haga fecth con settime 
 
 function showData(data) {
   const productSection = document.querySelector(".products-section .section-cards");
-  productSection.innerHTML = ""; // Limpiar contenido previo
+  productSection.innerHTML = ""; // Limpiar contenido previo..
 
   data.forEach((prod, index) => {
     setTimeout(() => {
@@ -22,8 +19,8 @@ function showData(data) {
             <p>${prod.marca || "Sin marca"}</p>
             <h3>${prod.name}</h3>
             <p>$${prod.precio.toFixed(2)}</p>
-            <small>Antes $${(prod.precio * 1.4).toFixed(2)}</small>
-            <button class="look">Ver detalles</button>
+            <small>Antes <s>$${(prod.precio * 1.4).toFixed(2)}</s></small>
+            <button class="look"> <i class="icon bi bi-plus"></i> </button>
           </div>
         </div>
       `;
@@ -38,3 +35,25 @@ fetch("./assets/product.json")
     .then(response => response.json())
         .then(data => { console.log(data); showData(data); })
                 .catch(error => console.error(error));
+
+
+
+                
+
+const bannerImage = document.getElementById("banner-img");
+let counter = 0;
+let images = [
+    "./assets/images/promo.png",
+    "./assets/images/anuncio.png",
+]
+setInterval(() => {
+    
+    bannerImage.style.opacity =0.3;
+    if (counter != images.length) {
+        bannerImage.style.opacity = 0.8;
+        bannerImage.src = `${images[counter]}`;
+        counter++;
+    }else{
+        counter = 0;
+    }
+}, 4000);
