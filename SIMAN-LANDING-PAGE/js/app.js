@@ -48,12 +48,12 @@ let images = [
 ]
 setInterval(() => {
     
-    bannerImage.style.opacity =0.3;
+    bannerImage.style.opacity =0.3; 
     if (counter != images.length) {
         bannerImage.style.opacity = 0.8;
-        bannerImage.src = `${images[counter]}`;
+        bannerImage.src = `${images[counter]}`; 
         counter++;
     }else{
-        counter = 0;
+        counter = 0; // resetear el contador
     }
 }, 4000);
