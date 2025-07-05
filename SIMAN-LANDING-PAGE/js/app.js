@@ -47,10 +47,8 @@ let images = [
     "./assets/images/anuncio.png",
 ]
 setInterval(() => {
-    
-    bannerImage.style.opacity =0.3; 
+     
     if (counter != images.length) {
-        bannerImage.style.opacity = 0.8;
         bannerImage.src = `${images[counter]}`; 
         counter++;
     }else{

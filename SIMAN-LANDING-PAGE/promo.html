@@ -30,12 +30,35 @@
             <nav class="navbar" id="navbar">
                 <a href="index.html" class="nav-item" id="index">Inicio</a>
                 <a href="./index.html#productos" class="nav-item">Productos</a>
-                <a href="#" class="nav-item">Bebés</a>
+                <a href="./promo.html" class="nav-item">Promociones</a>
                 <a href="#" class="nav-item">Celulares</a>
             </nav>
         </header>
+
+        <main class="main-container">
+            <section class="images">
+                <img src="./assets/images/anuncio.png" alt="anuncio imagen" class="main-image">
+                <img src="./assets/images/promo.png" alt="promocion imagen" class="main-image">
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <section class="copy">&copy; 2025 SIMAN</section>
+            <section class="personal"> Made with 💖 by Goatja</section>
+        </footer>
     </div>
 
+
+
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const navbar = document.getElementById('navbar');
+
+        burgerMenu.addEventListener('click', () => {
+            navbar.classList.toggle('activo');
+        });
+    </script>
 </body>
 
 </html>
