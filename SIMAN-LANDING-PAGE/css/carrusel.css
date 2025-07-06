@@ -1,3 +1,4 @@
+/* 
 
 
 
@@ -8,14 +9,20 @@
 ╚██████╔╝╚█████╔╝██║░░██║░░░██║░░░╚█████╔╝██║░░██║
 ░╚═════╝░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
 
-/* Contenedor principal que configura la base de las imagenes */
+
+*/
 .wrap .main-container .fade {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 60vh;
+  max-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* 🖼️ Imágenes superpuestas con animación fade */
 .wrap .main-container .fade .image {
   position: absolute;
   width: 100%;
@@ -23,8 +30,10 @@
   object-fit: cover;
   opacity: 0;
   animation: fadeSwap 12s infinite ease-in-out;
+  transition: opacity 2s ease;
 }
 
+/* 🎬 Alternancia en cada imagen */
 .wrap .main-container .fade .image:nth-child(1) {
   animation-delay: 0s;
 }
@@ -34,15 +43,34 @@
 .wrap .main-container .fade .image:nth-child(3) {
   animation-delay: 8s;
 }
-/* Simula la aparici[on  */
+
+/* 🌫️ Animación del ciclo */
 @keyframes fadeSwap {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  100% { opacity: 0; }
+  0%, 100% { opacity: 0; }
+  10%      { opacity: 1; }
+  30%      { opacity: 1; }
+  40%      { opacity: 0; }
 }
 
+/* 📱 Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .wrap .main-container {
+    width: 100%;
+  }
 
-/* End */
-/* Goatja */
+  .wrap .main-container .fade {
+    height: 100vh;
+    padding: 0.5em;
+  }
+
+  .wrap .main-container .fade .image {
+    object-fit: contain;
+  }
+}
+
+/* 🖥️ Ajustes extra para pantallas grandes */
+@media (min-width: 1024px) {
+  .wrap .main-container .fade {
+    height: 100vh;
+  }
+}
