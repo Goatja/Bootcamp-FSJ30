@@ -11,11 +11,14 @@
 
 
 */
+.wrap .main-container{
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_1280.jpg);
+}
 .wrap .main-container .fade {
   position: relative;
   width: 100%;
   min-height: 60vh;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -55,7 +58,18 @@
 /* 📱 Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .wrap .main-container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+  }
+
+  /* Texto solo aparece en pantallas pequeñas */
+  .wrap .main-container .title{
+    background-color: blue;
+    
+  }
+  .wrap .main-container .title h1{
+    color: #fff;
   }
 
   .wrap .main-container .fade {
