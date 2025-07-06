@@ -13,6 +13,25 @@
 */
 .wrap .main-container{
   background-image: url(https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_1280.jpg);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap .main-container .text-wrap{
+  flex-wrap: wrap;
+  height: fit-content;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.5em;
+  background-color: rgb(206, 9, 9);
+}
+
+.wrap .main-container .text-wrap .text-head{
+  margin: 0 auto;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+
 }
 .wrap .main-container .fade {
   position: relative;
@@ -30,7 +49,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   animation: fadeSwap 12s infinite ease-in-out;
   transition: opacity 2s ease;
@@ -47,6 +66,7 @@
   animation-delay: 8s;
 }
 
+
 /* 🌫️ Animación del ciclo */
 @keyframes fadeSwap {
   0%, 100% { opacity: 0; }
@@ -55,25 +75,32 @@
   40%      { opacity: 0; }
 }
 
-/* 📱 Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
+
+/* 🖥️ Ajustes extra para pantallas pequeñas menores a los 480px */
+
+@media (width:480px){
+  .wrap .main-container  {
+   height: 30vh;
+  }
+}
+
+/* 📱 Ajustes para pantallas como tablets o telefonos grandes */
+
+@media (min-width:481px) and (max-width: 800px) {
+
+  
   .wrap .main-container {
-    display: flex;
-    flex-direction: column;
+    height: 90vh;
+    
+  }
+
+  .wrap .main-container .text-wrap{
+    margin-top: 1.9em;
     width: 100%;
   }
 
-  /* Texto solo aparece en pantallas pequeñas */
-  .wrap .main-container .title{
-    background-color: blue;
-    
-  }
-  .wrap .main-container .title h1{
-    color: #fff;
-  }
-
   .wrap .main-container .fade {
-    height: 100vh;
+    height: 50vh;
     padding: 0.5em;
   }
 
@@ -82,9 +109,5 @@
   }
 }
 
-/* 🖥️ Ajustes extra para pantallas grandes */
-@media (min-width: 1024px) {
-  .wrap .main-container .fade {
-    height: 100vh;
-  }
-}
+
+
