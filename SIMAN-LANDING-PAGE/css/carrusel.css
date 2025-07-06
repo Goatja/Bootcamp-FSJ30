@@ -1,25 +1,22 @@
 
-/* =========================================== */
-/*                 
-╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╭╮╱╱╱╭╮╱╱╱╱╱╱╭━━━╮╱╱╱╱╱╭╮
-┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱┃┃╱╱╱┃┃╱╱╱╱╱╱┃╭━╮┃╱╱╱╱╭╯╰┳╮
-┃┃╱╰╋━━┳━┳━┳╮╭┳━━┳━━┫┃╱╭╮╭┳━━┳━╯┣━━╮┃╰━┳╮╱╭╮┃┃╱╰╋━━┳━┻╮╭┻╋━━╮
-┃┃╱╭┫╭╮┃╭┫╭┫┃┃┃━━┫┃━┫┃╱┃╰╯┃╭╮┃╭╮┃┃━┫┃╭╮┃┃╱┃┃┃┃╭━┫╭╮┃╭╮┃┃╭┫╭╮┃
-┃╰━╯┃╭╮┃┃┃┃┃╰╯┣━━┃┃━┫╰╮┃┃┃┃╭╮┃╰╯┃┃━┫┃╰╯┃╰━╯┃┃╰┻━┃╰╯┃╭╮┃╰┫┃╭╮┃
-╰━━━┻╯╰┻╯╰╯╰━━┻━━┻━━┻━╯╰┻┻┻╯╰┻━━┻━━╯╰━━┻━╮╭╯╰━━━┻━━┻╯╰┻━┫┣╯╰╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃╱╱╱╱╱╱╱╱╱╱╱╱╭╯┃
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯╱╱╱╱╱╱╱╱╱╱╱╱╰━╯                  */
-/* ========================================= */
+
+
+░██████╗░░█████╗░░█████╗░████████╗░░░░░██╗░█████╗░
+██╔════╝░██╔══██╗██╔══██╗╚══██╔══╝░░░░░██║██╔══██╗
+██║░░██╗░██║░░██║███████║░░░██║░░░░░░░░██║███████║
+██║░░╚██╗██║░░██║██╔══██║░░░██║░░░██╗░░██║██╔══██║
+╚██████╔╝╚█████╔╝██║░░██║░░░██║░░░╚█████╔╝██║░░██║
+░╚═════╝░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
 
 /* Contenedor principal que configura la base de las imagenes */
-.wrap .main-container .carrusel {
+.wrap .main-container .fade {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-.wrap .main-container .carrusel .image {
+.wrap .main-container .fade .image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -28,13 +25,13 @@
   animation: fadeSwap 12s infinite ease-in-out;
 }
 
-.wrap .main-container .carrusel .image:nth-child(1) {
+.wrap .main-container .fade .image:nth-child(1) {
   animation-delay: 0s;
 }
-.wrap .main-container .carrusel .image:nth-child(2) {
+.wrap .main-container .fade .image:nth-child(2) {
   animation-delay: 4s;
 }
-.wrap .main-container .carrusel .image:nth-child(3) {
+.wrap .main-container .fade .image:nth-child(3) {
   animation-delay: 8s;
 }
 /* Simula la aparici[on  */
