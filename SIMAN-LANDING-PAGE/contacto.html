@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Siman</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 🧭 Encabezado -->
+        <header class="header-container">
+            <!-- Logo -->
+            <section class="logo-header">
+                <a href="#" class="logo">
+                    <span class="logo-rotado"><span class="logo-content">S</span></span>IMAN.COM
+                </a>
+            </section>
+
+            <!-- Botón hamburguesa -->
+            <div class="burger-menu" id="burger-menu">
+                <div class="burger-item"></div>
+                <div class="burger-item"></div>
+                <div class="burger-item"></div>
+            </div>
+
+            <!-- Menú navegable -->
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="nav-item" id="index">Inicio</a>
+                <a href="./index.html#productos" class="nav-item">Productos</a>
+                <a href="./promo.html" class="nav-item">Promociones</a>
+                <a href="./contacto.html" class="nav-item">Contacto</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <article class="contact-section">
+
+                <section class="main-text">
+                    <article>
+                        <h1>Contáctanos</h1>
+                    </article>
+                </section>
+
+                <section class="contact-form">
+
+                    <form class="form">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required />
+                        <input type="email" name="correo" placeholder="Tu correo electrónico" required />
+                        <textarea name="mensaje" rows="4" placeholder="Tu mensaje o consulta"
+                            style="width: 80%; border-radius: 0.5em; border: 1px solid #ccc; padding: 0.5em;"></textarea>
+                        <input class="btn" type="submit" value="Enviar mensaje">
+                    </form>
+
+                </section>
+            </article>
+        </main>
+
+        <!-- 📎 Footer -->
+        <footer class="footer">
+            <div class="copy">&copy; 2025 - Todos los derechos reservados</div>
+            <section class="personal"> Made with 💖 by Goatja <img
+                    src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bnVtZWxjaDdkcDF0dmJrYW00c3hxb2Nwd3V0ZDlmM2cxdTR2dWYyMyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/k7V0g3ZQHhLGrsMR7r/giphy.gif"
+                    alt="gif" width="30">
+            </section>
+        </footer>
+    </div>
+
+    <script src="./js/app.js"></script>
+
+    <!-- Iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/7f0c34708b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

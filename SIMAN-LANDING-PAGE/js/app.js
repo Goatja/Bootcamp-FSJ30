@@ -37,21 +37,26 @@ fetch("./assets/product.json")
                 .catch(error => console.error(error));
 
 
+        const burgerMenu = document.getElementById('burger-menu');
+        const navbar = document.getElementById('navbar');
 
+        burgerMenu.addEventListener('click', () => {
+            navbar.classList.toggle('activo');
+        });
                 
 
-const bannerImage = document.getElementById("banner-img");
-let counter = 0;
-let images = [
-    "./assets/images/promo.png",
-    "./assets/images/anuncio.png",
-]
-setInterval(() => {
+// const bannerImage = document.getElementById("banner-img");
+// let counter = 0;
+// let images = [
+//     "./assets/images/promo.png",
+//     "./assets/images/anuncio.png",
+// ]
+// setInterval(() => {
      
-    if (counter != images.length) {
-        bannerImage.src = `${images[counter]}`; 
-        counter++;
-    }else{
-        counter = 0; // resetear el contador
-    }
-}, 4000);
+//     if (counter != images.length) {
+//         bannerImage.src = `${images[counter]}`; 
+//         counter++;
+//     }else{
+//         counter = 0; // resetear el contador
+//     }
+// }, 4000);
