@@ -25,6 +25,9 @@ btnMagico.addEventListener( "click", () =>{
     alert("avda kabrsasd")
     let dato = prompt("Ingresa tu nombre: ");
     console.log(dato);
+
+    elementoDOM.style.color = 'red';
+    elementoDOM.style.fontFamily = 'Arial'
     
 })
 
