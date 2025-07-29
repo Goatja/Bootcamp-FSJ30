@@ -102,8 +102,11 @@ function eliminarCurso(id){
     cursosCarrito.map( (curso) => {
         if(curso.id == id){
             mostrarMensaje(`${curso.nombre} se ha eliminado`) 
+            if(curso.cantidad > 1){
+                curso.cantidad -= 1;
+            }else{
             cursosCarrito = cursosCarrito.filter( curso => curso.id != id);
-              
+            }
         }
     })
 
