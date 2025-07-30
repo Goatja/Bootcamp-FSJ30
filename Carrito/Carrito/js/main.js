@@ -98,12 +98,17 @@ function pintarCarritoHTML(){
 }
 
 function eliminarCurso(id){
+      
     console.log(id);
     cursosCarrito.map( (curso) => {
         if(curso.id == id){
             mostrarMensaje(`${curso.nombre} se ha eliminado`) 
             if(curso.cantidad > 1){
                 curso.cantidad -= 1;
+                curso.precio = parseFloat(curso.precio.slice(1));
+                curso.precio -= 15.0;
+
+                curso.precio = `$${curso.precio}`;
             }else{
             cursosCarrito = cursosCarrito.filter( curso => curso.id != id);
             }
