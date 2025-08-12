@@ -86,3 +86,41 @@ const perrito = new Perro("Cannis", 2, "Masculino", "Marron", "Pitbull", "Caimit
 
 console.log(perrito.especie);
 console.log(perrito.ladrar());
+
+//Tipos personalizados
+
+type User = {
+    name:string,
+    email:string,
+    password:string,
+    rol:string
+}
+
+let usuarito:User = {
+    name:"Maria",
+    email:"maria@email.com",
+    password:'12345678',
+    rol:"admin"
+}
+
+interface IUser {
+    name:string,
+    email:string,
+    password:string,
+    rol:string
+
+    login():string;
+}
+
+let usuarito2:IUser = {
+    name:"Maria",
+    email:"maria@email.com",
+    password:'12345678',
+    rol:"admin",
+    login(){
+        return "Some";
+    }
+}
+
+/* Ejemplo de uso de interfaces es POO */
+
