@@ -1,5 +1,9 @@
 import "./App.css";
-import { ListCharacter } from "./components/listCharacter";
+import { ListCharacter } from "./views/listCharacter/listCharacter";
+import { FavoritesDataProvider } from "./context/FavoritesContext";
+import { BrowserRouter, Route, Routes } from 'react-router'
+import { Sesion } from "./views/sesion/Sesion";
+import { Link } from "react-router";
 
 //Asincronismo maneja codigo que se tarda en cumplirse como solicitu a un servidor
 //Promesa la esperanza
@@ -7,8 +11,17 @@ import { ListCharacter } from "./components/listCharacter";
 function App() {
   return (
     <>
-      <h1>Hello</h1>
-      <ListCharacter/>
+      {/* Activamos React Router  */}
+      <FavoritesDataProvider>
+      <BrowserRouter>
+       
+        <Routes>
+          <Route path="/" element={<ListCharacter/>}/>
+          <Route path="/sesion" element={<Sesion/>} />
+        </Routes>
+      </BrowserRouter>
+         
+      </FavoritesDataProvider>
     </>
   );
 }

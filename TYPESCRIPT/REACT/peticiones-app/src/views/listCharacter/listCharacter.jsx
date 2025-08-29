@@ -1,11 +1,25 @@
 //rafc Snipet para crear el componente funcional con flecha
 
-import { useEffect, useState } from "react";
-import { CardCharacter } from "./CardCharacter";
+import { useContext, useEffect, useState } from "react";
+import { CardCharacter } from "../../components/CardCharacter";
+import { FavoritesContext } from "../../context/FavoritesContext";
 
 export const ListCharacter = () => {
   //Siempre que se necesite una caja para Guardar algo se va hacer un ESTADO
   const [listCharacters, setListCharacters] = useState([]);
+
+// Utilizamos el useContext -> Hook para utilizar un contexto con camelCase
+//Sintaxis cuando solo tenemos un solo valor en el contexto.
+/* let valorContexto = useContext(FavoritesContext);
+console.log(valorContexto); */
+
+const {favoritos, setFavoritos} = useContext(FavoritesContext)
+
+
+
+console.log(favoritos);
+
+  
 
   //Siempre poner camelCase
   const peticionApi = () => {
@@ -41,11 +55,14 @@ export const ListCharacter = () => {
       {/**Recorer el arr para mostrar los datos => Mapear los datos para pintarlos  */}
       {listCharacters.map((char) => {
         return (
-          <section key={char.id}>
-            <CardCharacter 
+          <section key={char.id} className="row">
+            <CardCharacter
+            id={char.id} 
             name={char.name}
             image={char.image} 
-            status={char.status} 
+            status={char.status}
+            listFavorites = {favoritos}
+            changeFavorites = {setFavoritos} 
             />
           </section>
         );
