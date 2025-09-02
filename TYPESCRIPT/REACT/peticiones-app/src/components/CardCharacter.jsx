@@ -28,7 +28,7 @@ const findCharacterInFavorites = () => {
 
   return (
         <div className="card" style={{width: '18rem;'}}>
-            <img src={image} className="card-img-top" alt={name}/>
+            <img src={image} className="card-img-top h-50" alt={name}/>
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">{status}</p>

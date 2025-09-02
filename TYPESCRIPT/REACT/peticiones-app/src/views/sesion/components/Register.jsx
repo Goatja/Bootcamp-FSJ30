@@ -6,22 +6,21 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from "../../../repositories/firebase/config";
 
 const schema = yup.object({
-    email:yup
-    .string('Please enter only text')
+    email:yup.string('Please enter only text')
     .email('Please enter a valid email')
     .required('Must enter something'),
 
     password: yup.string().required().min(8, 'Please enter a min 8 chars')
-    .matches(/[A-Z]/)
+    .matches(/[A-Z]/, 'Must have A and Z')
     .matches(/[a-z]/)
     .matches(/[0-9]/)
-    .matches(/[!@#$%&*()?.,_:<>"/]/)
-    //confirm_password: yup.string().oneOf(yup.ref("password")) 
+    .matches(/[!@#$%&*()?.,_:<>"/]/),
+    confirm_password: yup.string().oneOf([yup.ref("password"),null], 'Check out password') 
 });
 
 export const Register = () => {
 
-  const {register, handleSubmit} = useForm({
+  const {register, handleSubmit, formState:{errors}} = useForm({
     resolver: yupResolver(schema)
   })
 
@@ -31,6 +30,7 @@ export const Register = () => {
       // Signed up 
       const user = userCredential.user;
       // ...
+      alert('User registered successfully!')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -47,11 +47,13 @@ export const Register = () => {
         <form onSubmit={handleSubmit(onSubmitForm)}>
             <label htmlFor=""  className="form-label">Email:</label>
             <input type="text" className="form-control" {...register("email")}/>
+            <p>{errors.email && errors.email.message}</p>
             <label htmlFor="" className="form-label">Password:</label>
             <input type="text" className="form-control" {...register('password')}/>
+            <p className="text-danger">{errors.password && errors.password.message}</p> 
             <label htmlFor="" className="form-label">Confirm Password:</label>
             <input type="text" className="form-control" {...register('confirm_password')}/>
-            <button type="submit" className="">Send</button>
+            <button type="submit">Send</button>
         </form>
     </div>
   )

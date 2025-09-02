@@ -1,3 +1,4 @@
+import { LoginComponents } from "./components/LoginComponents"
 import { Register } from "./components/Register"
 
 
@@ -6,7 +7,7 @@ export const Sesion = () => {
     <div>
      Sesion
         <Register />
-
+        <LoginComponents />
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CardCharacter } from "../../components/CardCharacter";
 import { FavoritesContext } from "../../context/FavoritesContext";
+import { NavBar } from "../../components/nav/NavBar";
 
 export const ListCharacter = () => {
   //Siempre que se necesite una caja para Guardar algo se va hacer un ESTADO
@@ -51,11 +52,15 @@ console.log(favoritos);
 
   return (
     <>
+    <NavBar/>
       List Character
       {/**Recorer el arr para mostrar los datos => Mapear los datos para pintarlos  */}
+     <section className="row">
+
       {listCharacters.map((char) => {
         return (
-          <section key={char.id} className="row">
+          <section key={char.id}  className="col-md-4 col-lg-4 col-sm-12">
+
             <CardCharacter
             id={char.id} 
             name={char.name}
@@ -67,6 +72,7 @@ console.log(favoritos);
           </section>
         );
       })}
+     </section>
     </>
   );
 };
