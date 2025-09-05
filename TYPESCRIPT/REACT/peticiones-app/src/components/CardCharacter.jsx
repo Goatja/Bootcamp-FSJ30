@@ -1,6 +1,6 @@
 
 
-export const CardCharacter = ({id, name, image, status, listFavorites, changeFavorites}) => {
+export const CardCharacter = ({id, name, image, status, listFavorites=null, changeFavorites}) => {
 
   /*Parte de logica para poder utilizar la lista de favoritos  */
   
@@ -27,13 +27,13 @@ const findCharacterInFavorites = () => {
 
 
   return (
-        <div className="card" style={{width: '18rem;'}}>
+        <div className="card" style={{width: '18rem'}}>
             <img src={image} className="card-img-top h-50" alt={name}/>
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">{status}</p>
-                {findCharacterInFavorites() ? <button className="btn btn-danger" onClick={handleDeleteToFavorites}>Delete Favorites</button>
-                 : <button className="btn btn-primary" onClick={handleAddFavorites}>Add to Favorites</button> }
+                {listFavorites ? findCharacterInFavorites() ? <button className="btn btn-danger" onClick={handleDeleteToFavorites}>Delete Favorites</button >
+                 : <button className="btn btn-primary" onClick={handleAddFavorites}>Add to Favorites</button> :null}
             </div>
          </div>
   )

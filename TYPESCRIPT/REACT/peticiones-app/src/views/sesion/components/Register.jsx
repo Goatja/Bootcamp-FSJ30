@@ -41,19 +41,20 @@ export const Register = () => {
   }
 
   return (
-    <div>
-        Register
+    <div className=" rounded text-light" style={{width:'50vw', background:'url(https://m.media-amazon.com/images/M/MV5BYjc5MDFmODEtOTA3ZS00YjE3LWE3NjMtYjUxZTVlNWNiNzFjXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg)', backgroundPosition:'center', backgroundSize:'cover'}}>
+        <h3 className="f-3 border-bottom">Register</h3> 
 
-        <form onSubmit={handleSubmit(onSubmitForm)}>
+        <form className="bg-dark text-light me-auto p-1 w-50 shadow" onSubmit={handleSubmit(onSubmitForm)}>
             <label htmlFor=""  className="form-label">Email:</label>
             <input type="text" className="form-control" {...register("email")}/>
-            <p>{errors.email && errors.email.message}</p>
+            <p className="text-danger">{errors.email && errors.email.message}</p>
             <label htmlFor="" className="form-label">Password:</label>
             <input type="text" className="form-control" {...register('password')}/>
             <p className="text-danger">{errors.password && errors.password.message}</p> 
             <label htmlFor="" className="form-label">Confirm Password:</label>
             <input type="text" className="form-control" {...register('confirm_password')}/>
-            <button type="submit">Send</button>
+            <p className="text-danger">{errors.confirm_password && errors.confirm_password.message}</p>
+            <button className="btn btn-success m-1 w-100 shadow " type="submit">Send</button>
         </form>
     </div>
   )

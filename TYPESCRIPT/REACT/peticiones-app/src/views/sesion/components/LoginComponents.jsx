@@ -40,9 +40,10 @@ export const LoginComponents = () => {
   };
 
   return (
-    <div>
-      LoginComponents
-      <form onSubmit={handleSubmit(onSubmitForm)}>
+    <div className=" rounded text-light" style={{width:'50vw', background:'url(https://m.media-amazon.com/images/M/MV5BYjc5MDFmODEtOTA3ZS00YjE3LWE3NjMtYjUxZTVlNWNiNzFjXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg)', backgroundPosition:'center', backgroundSize:'cover'}}>
+        <h3 className="f-3 border-bottom">Login</h3> 
+      
+      <form onSubmit={handleSubmit(onSubmitForm)} className="bg-dark text-light me-auto p-1 w-50 shadow">
         <label  className="form-label">
           Email:
         </label>
