@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Firebase cache
-./repositories/firebase/cache
-.firebase/
+# hide repositories
+./repositories/firebase/config.js
+

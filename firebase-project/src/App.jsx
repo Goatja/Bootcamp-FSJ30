@@ -1,7 +1,10 @@
 
-import { BrowserRouter } from 'react-router'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import { NavBar } from './nav/NavBar'
+import { Home } from './views/home/Home'
 import LoginComponent from './views/login/LoginComponent'
-import { Products } from './views/products/Products'
+import { DashBoard } from './views/dashboard/DashBoard'
+
 
 function App() {
   
@@ -9,10 +12,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <h1>Holiiwins</h1>
-      
-        <LoginComponent />
-        <Products />
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<LoginComponent />} />
+          <Route path='*' element={<h1>404 Not Found</h1>} />
+          <Route path='/dashboard' element={<DashBoard />} />
+
+        </Routes>
       </BrowserRouter>
     </>
   )

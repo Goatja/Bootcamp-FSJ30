@@ -1,8 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../repositories/firebase/config"
 import { useEffect, useState } from "react";
-import { auth } from "../../repositories/firebase/config";
-import Card from "../../../Card";
+import { Card } from "./components/Card";
 export const Products = () => {
 
     const [products, setProducts] = useState([]);
@@ -23,13 +22,17 @@ export const Products = () => {
     }, []);
 
   return (
-    <div className="container row">
-        {products.map((product, index) => (
-          <Card key={index} nombre={product.name} precio={product.price} stock={product.stock} />
+    <div className="container row g-3">
+
+        {products.map(({name, price, stock, id}) => (
+          <div className="col-md-4 col-lg-4 col-xl-3 col-sm-6 mb-3 " key={id}>
+              <Card nombre={name} precio={price.toFixed(2)} stock={stock} id={id} />
+          </div>
         ))}
 
     </div>
   )
 }
+
 
 
