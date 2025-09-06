@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 # hide repositories
-./repositories/firebase/config.js
+.env.local
+
 
