@@ -114,4 +114,25 @@
     $nombreUsuario = $_GET['nombre'] ?? 'Invitado';
     echo "Hola, {$nombreUsuario}\n";
     
+    //Estructuras repetitivas
+    for ($i = 0; $i < 5; $i++) {
+        echo "El valor de i es: {$i}\n";
+    }
+
+    while ($edad < 21) {
+        echo "Tienes {$edad} años\n";
+        $edad++;
+    }
+
+    $contador = 0;
+    do {
+        echo "El contador es: {$contador}\n";
+        $contador++;
+    } while ($contador < 5);
+
+    foreach (['manzana', 'banana', 'naranja'] as $fruta) {
+        echo "La fruta es: {$fruta}\n";
+    }
+
+    //Estructuras de datos
 ?>
