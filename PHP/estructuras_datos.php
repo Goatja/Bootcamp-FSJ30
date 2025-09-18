@@ -120,6 +120,102 @@ echo $persona1->getNombre() . "\n"; //Juan
 echo $persona1->getEdad() . "\n"; //23
 
 //LIFO -> Last In First Out (Pila)
+class Stack{
+    private $data;
+
+    //constructor con parametros opcionales
+    public function __construct($dataParams = []){
+        $this->data = $dataParams;
+    }
+
+    //Para agregar elementos
+    public function add($elemento){
+        array_push($this->data, $elemento);
+    }
+
+    //Eliminar un elemento
+    public function remove(){
+        return array_pop($this->data);
+    }
+
+}
+
+$stackcito = new Stack([1,2,3,4,2]);
+
 //FIFO -> First In First Out (Cola)
+
+class Queue{
+
+    private $data;
+
+    //constructor con parametros opcionales
+    public function __construct($dataParams = []){
+        $this->data = $dataParams;
+    }
+
+    //Para agregar elementos
+    public function add($elemento){
+        array_push($this->data, $elemento);
+    }
+
+    //Eliminar un elemento
+    public function remove(){
+        return array_shift($this->data);
+    }
+
+}
 //Stack -> Pila
 //Queue -> Cola
+
+class Node{
+    private $value;
+    private $next;
+    public function __construct($valueParam) {
+        $this->value = $valueParam;
+        $this->next = null;
+    }
+
+    public function setNext($nextValue){
+        $this->next = $nextValue;
+    }
+
+    public function getNext(){
+        return $this->next;
+    }
+}
+
+
+class LinkedList {
+    private $head;
+    public function __construct() {
+        $this->head = null;
+    }
+    function add($value){
+        //Creamos un nuevo nodo.
+        $newNode = new Node($value);
+
+        if($this->head === null){
+            //creamos un nuevo node
+            $this->head = $newNode;
+        }else{
+            
+            $current = $this->head;
+//Recorremos la lista mientras el siguiente no sea nulo
+            while($current->getNext() !== null){
+                $current = $current->getNext();
+            }
+//Cuando encontramos el final, agregamos el nuevo node.
+            $current->setNext($newNode);
+        }
+    }
+}
+
+$lista = new LinkedList();
+
+$lista->add(1);
+$lista->add(5);
+$lista->add(2);
+
+print_r($lista);
+
+
