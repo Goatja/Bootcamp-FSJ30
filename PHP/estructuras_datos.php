@@ -219,3 +219,141 @@ $lista->add(2);
 print_r($lista);
 
 
+//Binary tree
+
+class Nodo{
+    private $value;
+    private $left;
+    private $right;
+
+    public function __construct($valuParam){
+        $this->value = $valuParam;
+        $this->left = null;
+        $this->right = null;
+    }
+
+   public function getValue(){
+        return $this->value;
+    }
+   public function getRight(){
+        return $this->right;
+    }
+   public function getLeft(){
+        return $this->left;
+    }
+
+
+  public function setValue($valueParam){
+        $this->value = $valueParam;
+    }
+   public function setRight($rightParam){
+        $this->right = $rightParam;
+    }
+   public function setLeft($leftParam){
+        $this->left = $leftParam;
+    }
+
+
+}
+class BinaryTree{
+
+    private $root;
+
+    public function __construct($data = null){
+        $this->root = $data;
+    }
+
+    public function insert($data){
+
+        $newNodo = new Nodo($data);
+
+        if($this->root === null){
+            $this->root = $newNodo;
+            return $this->root;
+        }
+            $current = $this->root;
+
+            while(true){
+                   if($newNodo->getValue() > $current->getValue()){
+
+                        if($current->getRight() === null){
+
+                            $current->setRight($newNodo);
+                            return $newNodo;
+                        }else{
+                            $current = $current->getRight();
+                        }
+                   }else{
+
+                        if($current->getLeft() === null){
+                            $current->setLeft($newNodo);
+                            return $newNodo;
+                        }else{
+                            $current = $current->getLeft();
+                        }
+
+                   }
+            }
+
+        
+    }
+
+
+    public function find($value){
+
+        
+        $current = $this->root;
+
+        while($current != null){
+            if($value === $current->getValue()){
+                return "The number: ". $current->getValue() . " found!!\n";
+            }elseif($value > $current->getValue()){
+                $current = $current->getRight();
+            }else{
+                $current = $current->getLeft();
+            }
+        }
+
+        return "Not found!";
+
+    }
+
+    //Delete method
+    public function delete($value){
+        $current = $this->root;
+
+        if($current === null){
+            return null;
+        }
+        //Debemos encotrar el valor del nodo para eliminar el node
+        while($current !== null){
+            if($value > $current->getValue()){
+                if($value === $current->getValue()){
+                    $current->setRight(null);
+                    return;
+                }else{
+                    $current = $current->getRight();
+                }
+                
+            }else{
+                return "Left side";
+            }
+        }
+    }
+
+}
+
+$arbolito = new BinaryTree();
+
+$arbolito->insert(10);
+$arbolito->insert(17);
+$arbolito->insert(19);
+$arbolito->insert(13);
+$arbolito->insert(9);
+
+$result = $arbolito->find(19);
+$delete = $arbolito->delete(13);
+print_r($arbolito);
+print_r($result);
+print_r($delete);
+print_r($arbolito);
