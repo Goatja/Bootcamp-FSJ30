@@ -1,17 +1,20 @@
 <?php 
 
 class Aerolinea{
+    private $id;
     private $nombre;
     private $cantidad;
     private $tipo;
 
-    public function __construct($nombreParam, $cantidadParam, $tipoParam) {
+    public function __construct($idParam, $nombreParam, $cantidadParam, $tipoParam) {
+        $this->id = $idParam;
         $this->nombre = $nombreParam;
         $this->cantidad = $cantidadParam;
         $this->tipo = $tipoParam;
     }
 
     /**
+     * 
      * Get the value of nombre
      */ 
     public function getNombre()
@@ -64,5 +67,23 @@ class Aerolinea{
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @Param int
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 }

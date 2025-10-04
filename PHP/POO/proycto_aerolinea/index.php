@@ -1,25 +1,40 @@
 <?php
-
+//Inicamos la sesion para poder utilizar la variable $sessioin
+require_once("./Aerolinea.php");
+session_start();
+ //print_r($_SESSION);
 //Llamamos la clase aerolinea.
 //Include ->Incluir el archivo y si no existe, mostrar un error y continuar la ejecucion del codigo
 //Require ->Requirer el archivo y si no existe, mostrar un error y detener la ejecucion del codigo.
 
 //Include_once -> Incluir el archivo una sola vez
 //Require_once -> Requerir una sola vez, si se vuelve a llamar dentro de este archovo va usar
-require_once("./Aerolinea.php");
+
+//$_SESSION -> Variable reservada para almacenar datos comos arr asociativo (Array_assoc)
+
 //Persistencia de datos.
-$aerolineas = [];
+//Auxiliar para prechequear sesion.
+if(!isset($_SESSION['aerolineas'])){
+    $_SESSION['aerolineas'] = [];
+}
+
+$aerolineas = $_SESSION['aerolineas'];
+
+
 if (isset($_POST["nombre_aerolinea"], $_POST["cantidad"], $_POST["tipo_aerolinea"])) {
+    $id = rand(1,1000);
     $nombre = $_POST["nombre_aerolinea"];
     $cantidad = $_POST["cantidad"];
     $tipo_aero = $_POST["tipo_aerolinea"];
 
-    $aerolinea = new Aerolinea($nombre, $cantidad, $tipo_aero);
+    $aerolinea = new Aerolinea($id, $nombre, $cantidad, $tipo_aero);
 
-    print_r($aerolinea);
+    //print_r($aerolinea);
     array_push($aerolineas, $aerolinea);
+
+    $_SESSION["aerolineas"] = $aerolineas;
     echo "<h1>Aerolineas hasta ahora.</h1><br>";
-    print_r($aerolineas);
+    //print_r($_SESSION['aerolineas']);
 }else{
     echo '
 
@@ -48,10 +63,10 @@ if (isset($_POST["nombre_aerolinea"], $_POST["cantidad"], $_POST["tipo_aerolinea
 </head>
 
 <body class="dark:text-white bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-    <h1 class="text-4xl font-extrabold dark:text-white"">Hello airelines</h1>
+    <h1 class="text-4xl font-extrabold dark:text-white">Hello airelines</h1>
 
     <h3 class="max-w-sm mx-auto text-4xl font-extrabold dark:text-white"">Crear una nueva aerolinea</h3>
-    <form method="POST" class="max-w-sm mx-auto bg-white dark:bg-gray-900 p-2">
+    <form  method="POST" class="max-w-sm mx-auto bg-white dark:bg-gray-900 p-2">
         <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Aerolinea</label>
         <input type="text" name="nombre_aerolinea" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <label for=""  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cantidad de Aviones</label>
@@ -66,7 +81,32 @@ if (isset($_POST["nombre_aerolinea"], $_POST["cantidad"], $_POST["tipo_aerolinea
         </select>
         <button type="submit" class=" mt-2 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Crear</button>
     </form>
+    <main>
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <th  scope="col" class="px-6 py-3">ID</th>
+                <th  scope="col" class="px-6 py-3">Name</th>
+                <th  scope="col" class="px-6 py-3">Cantidad</th>
+                <th  scope="col" class="px-6 py-3">Tipo de aerolinea</th>
+                <th  scope="col" class="px-6 py-3">Accion</th>
+            </thead>
+            <tbody >
+                <?php 
+                foreach($aerolineas as $aero){
+                    echo " <tr class='bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200'> 
+                        <td class='px-6 py-4'>{$aero->getId()}</td> 
+                        <td class='px-6 py-4'>{$aero->getNombre()}</td> 
+                        <td class='px-6 py-4'>{$aero->getCantidad()}</td> 
+                        <td class='px-6 py-4'>{$aero->getTipo()}</td> 
+                        <td class='px-6 py-4'> <button> Editar </button> </td> 
+                    </tr> ";
+                }
+                ?>
+            </tbody>
+        </table>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+   
 </body>
 
 </html>
